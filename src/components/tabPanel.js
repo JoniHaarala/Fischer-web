@@ -42,7 +42,7 @@ function a11yProps(index) {
 
 export default function TabMenu() {
     const [value, setValue] = React.useState(0);
-    const [tipo, setTipo] = useState('casa')
+    //const [tipo, setTipo] = useState('casa')
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
