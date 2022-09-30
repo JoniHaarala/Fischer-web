@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { yellow } from '@mui/material/colors';
 import HotelIcon from '@mui/icons-material/Hotel';
@@ -22,9 +21,9 @@ function RealEstateCard({
     favorite,
     propietario }) {
     return (
-        <section className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            <div className="relative mx-auto w-full">
-                <Link to={`/description/${id}`} className="relative inline-block w-full transform transition-transform duration-300 ease-in-out hover:-translate-y-2">
+        <section className="grid w-full py-3 grid-cols-1 gap-6">
+            <div className="relative mx-auto w-96">
+                <Link to={`/description/${id}`} className="relative inline-block w-full transform transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-lg">
                     <div className="rounded-lg bg-white p-4 shadow">
                         <div className="relative flex h-52 justify-center overflow-hidden rounded-lg">
                             <div className="w-full transform transition-transform duration-500 ease-in-out hover:scale-110">
@@ -50,7 +49,7 @@ function RealEstateCard({
                         </div>
 
                         <div className="mt-4">
-                            <h2 className="line-clamp-1 text-2xl font-medium text-gray-800 md:text-lg" title="locations desc">{location}</h2>
+                            <h2 className="line-clamp-1 h-8 text-2xl font-medium text-gray-800 overflow-hidden md:text-lg" title="locations desc">{location}</h2>
 
                             <p className="text-primary mt-2 inline-block whitespace-nowrap rounded-xl font-semibold leading-tight">
                                 <span className="text-sm uppercase"> u$d </span>
@@ -58,7 +57,7 @@ function RealEstateCard({
                             </p>
                         </div>
                         <div className="mt-4">
-                            <p className="line-clamp-1 mt-2 text-lg text-gray-800 flex-wrap overflow-hidden">{description}</p>
+                            <p className="line-clamp-1 mt-2 h-20 text-lg text-gray-800 flex-wrap text-ellipsis overflow-hidden" dangerouslySetInnerHTML={{ __html: description }}></p>
                         </div>
                         <div className="justify-center">
                             <div className="mt-4 flex space-x-3 overflow-hidden rounded-lg px-1 py-1">
