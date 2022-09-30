@@ -22,6 +22,7 @@ export default function Home() {
             {/* tarjetas de freatures de la empresa */}
             <Services />
             <section className="h-52"><h1>holahola</h1></section>
+            <section className="h-52"><h1>holahola</h1></section>
             {/* tarjetas de testimoniales */}
             <Comments />
         </div>
