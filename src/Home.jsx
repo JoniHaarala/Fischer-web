@@ -1,6 +1,8 @@
 import React from 'react'
 import mainbg from './img/mainbg.webp'
 import TabMenu from './components/tabPanel'
+import Services from './components/Services'
+import Comments from './components/Comments'
 
 export default function Home() {
     return (
@@ -17,9 +19,11 @@ export default function Home() {
                 </div>
             </div>
 
+            {/* tarjetas de freatures de la empresa */}
+            <Services />
             <section className="h-52"><h1>holahola</h1></section>
-            <section className="h-52"><h1>holahola</h1></section>
-            <section className="h-52"><h1>holahola</h1></section>
+            {/* tarjetas de testimoniales */}
+            <Comments />
         </div>
     )
 }
