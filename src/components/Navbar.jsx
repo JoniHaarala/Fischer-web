@@ -15,16 +15,19 @@ const Navbar = () => {
                     />
                 </Link>
             </div>
-            <nav className='flex w-full justify-between'>
+            <nav className='flex w-full justify-between text-white font-bold'>
                 <ul className='mx-4 md:mx-0 md:flex md:gap-5'>
-                    <li className="bg-secondary-bg my-3 flex justify-center md:my-0 py-2 px-4 rounded-lg shadow-md md:shadow-none">
+                    <li className="border-2 border-white my-3 flex justify-center md:my-0 py-2 px-4 rounded-lg hover:bg-blue-600">
                         <Link to="/compra">Comprar</Link>
                     </li>
-                    <li className="bg-secondary-bg my-3 flex justify-center md:my-0 py-2 px-4 rounded-lg shadow-md md:shadow-none">
+                    <li className="border-2 border-white my-3 flex justify-center md:my-0 py-2 px-4 rounded-lg hover:bg-blue-600">
                         <Link to="/alquiler">Alquilar</Link>
                     </li>
-                    <li className="bg-secondary-bg my-3 flex justify-center md:my-0 py-2 px-4 rounded-lg shadow-md md:shadow-none">
+                    <li className="border-2 border-white my-3 flex justify-center md:my-0 py-2 px-4 rounded-lg hover:bg-blue-600">
                         <Link to="/alquiler-temporario">Alquiler temporario</Link>
+                    </li>
+                    <li className="border-2 border-white my-3 flex justify-center md:my-0 py-2 px-4 rounded-lg hover:bg-blue-600">
+                        <Link to="/faq">Bases y condiciones</Link>
                     </li>
                 </ul>
                 <div className=''>

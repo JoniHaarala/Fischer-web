@@ -23,7 +23,7 @@ function RealEstateCard({
     return (
         <section className="grid w-full py-3 grid-cols-1 gap-6">
             <div className="relative mx-auto w-96">
-                <Link to={`/description/${id}`} className="relative inline-block w-full transform transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-lg">
+                <Link to={`/propiedades/${id}`} className="relative inline-block w-full transform transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-lg">
                     <div className="rounded-lg bg-white p-4 shadow">
                         <div className="relative flex h-52 justify-center overflow-hidden rounded-lg">
                             <div className="w-full transform transition-transform duration-500 ease-in-out hover:scale-110">
