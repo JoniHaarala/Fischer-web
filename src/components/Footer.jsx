@@ -12,7 +12,7 @@ const Footer = () => {
                 <div className='flex justify-center md:ml-7 xl:ml-0 mb-5 md:mb-0'>
                     <img alt='Logo Fischer' src={img} width={200} height={98}/>
                 </div>
-                <div className='flex gap-3 justify-center md:mr-7 xl:mr-0'>
+                <div className='flex gap-3 justify-center md:mr-3'>
                     <FacebookIcon fontSize="large" className="hover:text-black hover:transition-all hover:drop-shadow-md hover:cursor-pointer" />
                     <InstagramIcon fontSize="large" className="hover:text-orange-600 hover:transition-all hover:drop-shadow-md hover:cursor-pointer" />
                     <GoogleIcon fontSize="large" className="hover:text-red-600 hover:transition-all hover:drop-shadow-md hover:cursor-pointer" />
@@ -33,7 +33,7 @@ const Footer = () => {
                 <p>hola mundo</p>
                 <p>hola mundo</p>
             </div>
-            <p className='text-white text-sm self-center pt-10 pb-3'>©2022 Fischer Inmobiliaria Argentina S.L.</p>
+            <p className='text-white text-sm self-center pt-10 pb-3'>©2022 Fischer Inmobiliaria Argentina S.L.R</p>
         </footer>
     )
 }

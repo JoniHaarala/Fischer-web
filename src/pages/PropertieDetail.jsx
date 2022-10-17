@@ -1,6 +1,50 @@
 import React from 'react'
+import PropTypes from 'prop-types';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import MapView from '../components/MapView';
+
+
+function TabPanel(props) {
+    const { children, value, index, ...other } = props;
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box sx={{ p: 3 }}>
+                    {children}
+                </Box>
+            )}
+        </div>
+    );
+}
+TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
+};
+function a11yProps(index) {
+    return {
+        id: `simple-tab-${index}`,
+        'aria-controls': `simple-tabpanel-${index}`,
+    };
+}
 
 const PropertieDetail = () => {
+    
+    //tab panel controller
+    const [value, setValue] = React.useState(0);
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+
     return (
         <div className='md:pt-16 lg:pt-20 px-5 bg-slate-200'>
             <section className="principal">
@@ -33,13 +77,30 @@ const PropertieDetail = () => {
             </section>
             <div id='data y contact' className="rounded-xl my-3 grid grid-cols-1 md:grid-cols-3 gap-3">
                 <main className="informacion col-span-2 rounded-lg my-3">
-                    <section className="bg-gray-300">
-                        
-                    </section>
-                    <section className="bg-gray-300">hola</section>
-                    <section className="bg-gray-300">hola</section>
-                    <section className="bg-gray-300">mapa</section>
-                    <section className="bg-gray-300">algo mas</section>
+                    <Box sx={{ width: '100%', pr:2 }}>
+                        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                            <Tabs value={value} onChange={handleChange} variant="fullWidth" aria-label="basic tabs example">
+                                <Tab label="Descripcion" {...a11yProps(0)} />
+                                <Tab label="Ubicacion" {...a11yProps(1)} />
+                                <Tab label="Detalles" {...a11yProps(2)} />
+                                <Tab label="Caracteristicas" {...a11yProps(3)} />
+                            </Tabs>
+                        </Box>
+                        <TabPanel value={value} index={0}>
+                            Aca va la descripcion
+                        </TabPanel>
+                        <TabPanel value={value} index={1}>
+                            <p>items de la ubicacion</p>
+                            <h2>Mapa</h2>
+                            <MapView lat={-26.821505908875235} lon={-65.30295834670717}/>
+                        </TabPanel>
+                        <TabPanel value={value} index={2}>
+                            detalles de la propiedad.
+                        </TabPanel>
+                        <TabPanel value={value} index={3}>
+                            Caracteristicas de la propiedad.
+                        </TabPanel>
+                    </Box>
                 </main>
                 <section className="contact bg-secondary-bg my-3 rounded-lg">
                     <form onSubmit={''}>

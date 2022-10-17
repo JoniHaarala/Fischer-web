@@ -1,17 +1,17 @@
 import React from 'react'
 import img from '../img/logoFischerDarkMode.png'
-import { Link }from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
         <div className='w-full bg-components-color flex flex-col md:flex-row items-center gap-5 px-4 py-1 md:fixed z-10'>
             <div className='flex justify-center my-5 md:my-0 cursor-pointer'>
                 <Link to='/'>
-                    <img 
-                        alt='Logo Fischer' 
-                        src={img} 
-                        width={180} 
-                        height={88} 
+                    <img
+                        alt='Logo Fischer'
+                        src={img}
+                        width={180}
+                        height={88}
                     />
                 </Link>
             </div>
