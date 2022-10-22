@@ -1,10 +1,13 @@
 import React from 'react'
+import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import MapView from '../components/MapView';
+import { supabase } from '../utils/client'
+import { useEffect } from 'react';
 
 
 function TabPanel(props) {
@@ -38,13 +41,35 @@ function a11yProps(index) {
 }
 
 const PropertieDetail = () => {
-    
+
+    let { id } = useParams()
+    const [PropiedadData, setPropiedadData] = React.useState([])
+
     //tab panel controller
     const [value, setValue] = React.useState(0);
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 
+    const getPropiedad = async () => {
+        try {
+
+            let { data: propiedad, error } = await supabase
+                .from('propiedad')
+                .select('*')
+                .eq('id', `${id}`)
+            if (error) throw error;
+            if (propiedad) setPropiedadData(propiedad)
+        }
+        catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        getPropiedad()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
     return (
         <div className='md:pt-16 lg:pt-20 px-5 bg-slate-200'>
             <section className="principal">
@@ -77,7 +102,7 @@ const PropertieDetail = () => {
             </section>
             <div id='data y contact' className="rounded-xl my-3 grid grid-cols-1 md:grid-cols-3 gap-3">
                 <main className="informacion col-span-2 rounded-lg my-3">
-                    <Box sx={{ width: '100%', pr:2 }}>
+                    <Box sx={{ width: '100%', pr: 2 }}>
                         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                             <Tabs value={value} onChange={handleChange} variant="fullWidth" aria-label="basic tabs example">
                                 <Tab label="Descripcion" {...a11yProps(0)} />
@@ -92,36 +117,62 @@ const PropertieDetail = () => {
                         <TabPanel value={value} index={1}>
                             <p>items de la ubicacion</p>
                             <h2>Mapa</h2>
-                            <MapView lat={-26.821505908875235} lon={-65.30295834670717}/>
+                            <MapView lat={-26.821505908875235} lon={-65.30295834670717} />
                         </TabPanel>
                         <TabPanel value={value} index={2}>
-                            detalles de la propiedad.
+                            <div className="text-gray-800 grid gap-4 grid-cols-1 md:grid-cols-2">
+                                <p>Superficie cubierta: 200</p>
+                                <p>Superficie descubierta: 300</p>
+                                <p>Superficie Total: 500</p>
+                                <p>n° de habitaciones: 6</p>
+                                <p>n° de dormitorios: 3</p>
+                                <p>n° de baños: 2</p>
+                            </div>
+
                         </TabPanel>
                         <TabPanel value={value} index={3}>
-                            Caracteristicas de la propiedad.
+                            <div className="text-gray-800 capitalize grid gap-4 grid-cols-2 lg:grid-cols-3">
+                                {
+                                    PropiedadData.map((value) => (
+                                        <>
+                                            {value.agua === true && <p>agua</p>}
+                                            {value.luz === true && <p>luz</p>}
+                                            {value.terraza === true && <p>terraza</p>}
+                                            {value.cloaca === true && <p>cloaca</p>}
+                                            {value.telefono === true && <p>telefono</p>}
+                                            {value.comercial === true && <p>comercial</p>}
+                                            {value.gas === true && <p>gas</p>}
+                                            {value.wifi === true && <p>WIFI</p>}
+                                            {value.ac === true && <p>AC</p>}
+                                            {value.pavimento === true && <p>calle pavimentada</p>}
+                                            {value.ascensor === true && <p>ascensor</p>}
+                                            {value.alarma === true && <p>alarma</p>}
+                                            {value.vigilancia === true && <p>vigilancia</p>}
+                                            {value.lavadero === true && <p>lavadero</p>}
+                                            {value.gimnasio === true && <p>gimnasio</p>}
+                                            {value.balcon === true && <p>balcón</p>}
+                                            {value.living === true && <p>living</p>}
+                                            {value.cocina === true && <p>cocina</p>}
+                                            {value.parilla === true && <p>quincho y parilla</p>}
+                                            {value.mascotas === true && <p>admite mascotas</p>}
+                                            {value.piscina === true && <p>piscina</p>}
+                                            {value.jardin === true && <p>jardin</p>}
+                                            {value.oficina === true && <p>oficina</p>}
+                                        </>
+                                    ))
+                                }
+                            </div>
                         </TabPanel>
                     </Box>
                 </main>
-                <section className="contact bg-secondary-bg my-3 rounded-lg">
+                <section className="contact bg-secondary-bg my-3 rounded-lg shadow-lg">
                     <form onSubmit={''}>
                         <h2 className='text-center text-lg pt-5 pb-2 font-semibold uppercase'>Contactenos</h2>
-                        <div>
-                            <div className="p-3 m-1 flex items-center">
-                                <label htmlFor="">Correo:</label>
-                                <input type="email" className='ml-4 p-3 w-full rounded-lg border-none' />
-                            </div>
-                            <div className="p-3 m-1 flex items-center">
-                                <label htmlFor="">Nombre:</label>
-                                <input type="text" className='ml-2 p-3 w-full rounded-lg border-none' />
-                            </div>
-                            <div className="p-3 m-1 flex items-center">
-                                <label htmlFor="">Asunto:</label>
-                                <input type="text" className='ml-4 p-3 w-full rounded-lg border-none' />
-                            </div>
-                        </div>
-                        <div className='p-3 m-1 flex items-center'>
-                            <label htmlFor="">Mensaje:</label>
-                            <textarea rows="9" className='ml-2 rounded-lg w-full'></textarea>
+                        <div className='px-5 flex flex-col gap-4'>
+                            <TextField id="outlined-email" type="email" label="Correo" variant="filled" />
+                            <TextField id="outlined-nombre" label="Nombre" variant="filled" />
+                            <TextField id="outlined-asunto" label="Asunto" variant="filled" />
+                            <TextField id="filled-textarea" label="Mensaje" placeholder="Ingrese su mensaje" lang='es' multiline rows={9} variant="filled" />
                         </div>
                     </form>
                 </section>
