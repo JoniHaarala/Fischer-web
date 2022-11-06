@@ -72,7 +72,7 @@ const PropertieDetail = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     return (
-        <div className='md:pt-16 lg:pt-20 px-5 bg-slate-200'>
+        <div className='md:pt-16 lg:pt-20 px-5 bg-slate-50'>
             {
                 PropiedadData.map((datos) => (
                     <>
@@ -112,8 +112,8 @@ const PropertieDetail = () => {
                             }
                         </section>
                         <div id='data y contact' className="rounded-xl my-3 grid grid-cols-1 md:grid-cols-3 gap-3">
-                            <main className="informacion col-span-2 rounded-lg my-3">
-                                <Box sx={{ width: '100%', pr: 2 }}>
+                            <main className="informacion col-span-2 rounded-lg text-gray-700 my-3">
+                                <Box sx={{ width: '100%', p: 2, bgcolor: 'white', borderRadius: 3 }}>
                                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                                         <Tabs value={value} onChange={handleChange} variant="fullWidth" aria-label="basic tabs example">
                                             <Tab label="Descripcion" {...a11yProps(0)} />
@@ -131,7 +131,7 @@ const PropertieDetail = () => {
                                         <MapView lat={datos.latitud} lon={datos.longitud} />
                                     </TabPanel>
                                     <TabPanel value={value} index={2}>
-                                        <div className="text-gray-800 grid gap-4 grid-cols-1 md:grid-cols-2">
+                                        <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
                                             <p>Superficie cubierta: {datos.superficieCubierta} m2</p>
                                             <p>Superficie descubierta: {datos.superficieDescubierta} m2</p>
                                             <p>Superficie Total: {datos.superficieTotal} m2</p>
@@ -142,7 +142,7 @@ const PropertieDetail = () => {
 
                                     </TabPanel>
                                     <TabPanel value={value} index={3}>
-                                        <div className="text-gray-800 capitalize grid gap-4 grid-cols-2 lg:grid-cols-3">
+                                        <div className="capitalize grid gap-4 grid-cols-2 lg:grid-cols-3">
                                             {datos.agua === true && <p>agua</p>}
                                             {datos.luz === true && <p>luz</p>}
                                             {datos.terraza === true && <p>terraza</p>}
