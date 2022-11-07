@@ -16,24 +16,20 @@ const Navbar = () => {
                 </Link>
             </div>
             <nav className='flex w-full justify-between text-white font-bold'>
-                <ul className='mx-4 md:mx-0 md:flex md:gap-5'>
-                    <li className="border-2 border-white my-3 flex justify-center md:my-0 py-2 px-4 rounded-lg hover:bg-blue-600">
+                <ul className='mx-4 grid grid-cols-4 justify-items-center gap-2 md:mx-0 md:flex md:gap-5'>
+                    <li className="border-2 border-white flex justify-center py-2 px-4 rounded-lg hover:bg-blue-600">
                         <Link to="/compra">Comprar</Link>
                     </li>
-                    <li className="border-2 border-white my-3 flex justify-center md:my-0 py-2 px-4 rounded-lg hover:bg-blue-600">
+                    <li className="border-2 border-white flex justify-center py-2 px-4 rounded-lg hover:bg-blue-600">
                         <Link to="/alquiler">Alquilar</Link>
                     </li>
-                    <li className="border-2 border-white my-3 flex justify-center md:my-0 py-2 px-4 rounded-lg hover:bg-blue-600">
+                    <li className="border-2 border-white flex justify-center py-2 px-4 rounded-lg hover:bg-blue-600">
                         <Link to="/alquiler-temporario">Alquiler temporario</Link>
                     </li>
-                    <li className="border-2 border-white my-3 flex justify-center md:my-0 py-2 px-4 rounded-lg hover:bg-blue-600">
+                    <li className="border-2 border-white flex justify-center py-2 px-4 rounded-lg hover:bg-blue-600">
                         <Link to="/faq">Bases y condiciones</Link>
                     </li>
                 </ul>
-                <div className=''>
-                    <button className="mx-2 px-4 py-2 bg-pink-500">Sign Up</button>
-                    <button className="mx-2 px-4 py-2 bg-pink-500">Sign In</button>
-                </div>
             </nav>
         </div>
     )

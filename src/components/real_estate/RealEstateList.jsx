@@ -14,9 +14,10 @@ export default function RealEstateList({ data }) {
           superficie={values.superficieTotal}
           description={values.descripcion}
           precio={values.precio}
-          location={values.direccion}
+          location={values.direccion +", "+ values.barrio}
           tipoCasa={values.idTipo}
           favorite={true}
+          operacion={values.idCatVenta}
           propietario={values.propietario}
         />
       ))}

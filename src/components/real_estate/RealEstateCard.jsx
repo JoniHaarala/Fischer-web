@@ -19,6 +19,7 @@ function RealEstateCard({
     location,
     tipoCasa,
     favorite,
+    operacion,
     propietario }) {
     return (
         <section className="grid w-full py-3 grid-cols-1 gap-6">
@@ -43,8 +44,9 @@ function RealEstateCard({
                                     <FavoriteIcon className='mr-2 text-2xl text-white' />
                                 </p>
                             </div>
-
+                            
                             <span className="absolute top-0 right-2 z-10 mt-3 ml-3 inline-flex select-none rounded-sm bg-[#1f93ff] px-2 py-1 text-xs font-semibold text-white"> {tipoCasa} </span>
+                            <span className="absolute top-8 right-2 z-10 mt-3 ml-3 inline-flex select-none rounded-sm bg-[#1f93ff] px-2 py-1 text-xs font-semibold text-white"> {operacion} </span>
                             <span className="absolute top-0 left-0 z-10 mt-3 ml-3 inline-flex select-none rounded-lg bg-transparent px-3 py-2 text-lg font-medium text-white"> {favorite ? <StarIcon sx={{ color: yellow[600] }} /> : <StarBorderIcon />} </span>
                         </div>
 
@@ -52,8 +54,19 @@ function RealEstateCard({
                             <h2 className="line-clamp-1 h-8 text-2xl font-medium text-gray-800 overflow-hidden md:text-lg" title="locations desc">{location}</h2>
 
                             <p className="text-primary mt-2 inline-block whitespace-nowrap rounded-xl font-semibold leading-tight">
-                                <span className="text-sm uppercase"> u$d </span>
-                                <span className="text-2xl">{precio}</span>
+                                {
+                                    operacion === 'venta'
+                                        ?
+                                        <>
+                                            <span className="text-sm uppercase"> u$d </span>
+                                            <span className="text-2xl">{precio},00</span>
+                                        </>
+                                        :
+                                        <>
+                                            <span className="text-sm uppercase"> $ </span>
+                                            <span className="text-xl">{precio},00 al mes</span>
+                                        </>
+                                }
                             </p>
                         </div>
                         <div className="mt-4">
