@@ -1,8 +1,8 @@
 import React from "react";
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import GppGoodIcon from '@mui/icons-material/GppGood';
-import CoronavirusIcon from '@mui/icons-material/Coronavirus';
 import SouthAmericaIcon from '@mui/icons-material/SouthAmerica';
+import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
 
 export default function Services() {
     return (
@@ -12,29 +12,29 @@ export default function Services() {
                     <div className="text-blue-800">
                         <GppGoodIcon fontSize="large" />
                     </div>
-                    <h3>Get Best Prices</h3>
-                    <p>Pay through our application and save thousands and get amazing rewards.</p>
+                    <h3>Los mejores precios</h3>
+                    <p>Pague a través de nuestra aplicación y ahorre miles y obtenga increíbles recompensas.</p>
                 </div>
                 <div className="flex flex-col rounded-lg gap-4 p-8 bg-blue-50 shadow-lg transition-transform ease-in-out hover:translate-x-2 hover:-translate-y-4 hover:shadow-xl">
                     <div className="text-blue-800">
-                        <CoronavirusIcon fontSize="large" />
+                        <MapsHomeWorkIcon fontSize="large" />
                     </div>
-                    <h3>Covid Safe</h3>
-                    <p>We have all the curated hotels that have all the precaution for a covid safe environment.</p>
+                    <h3>Las mejores ofertas</h3>
+                    <p>Tenemos una amplia variedad de propiedad en oferta y en todas partes dentro de la Argentina</p>
                 </div>
                 <div className="flex flex-col rounded-lg gap-4 p-8 bg-blue-50 shadow-lg transition-transform ease-in-out hover:translate-x-2 hover:-translate-y-4 hover:shadow-xl">
                     <div className="text-blue-800">
                         <CreditCardIcon fontSize="large" />
                     </div>
-                    <h3>Flexible Payment</h3>
-                    <p>Enjoy the flexible payment through our app and get rewards on every payment.</p>
+                    <h3>Pago flexibles</h3>
+                    <p>Disfrute de una amplia variedad de formas de pagos flexibles a cada clietne a través de nuestras oficinas y aplicacion.</p>
                 </div>
                 <div className="flex flex-col rounded-lg gap-4 p-8 bg-blue-50 shadow-lg transition-transform ease-in-out hover:translate-x-2 hover:-translate-y-4 hover:shadow-xl">
                     <div className="text-blue-800">
                         <SouthAmericaIcon fontSize="large" />
                     </div>
-                    <h3>Find The Best Near You</h3>
-                    <p>Find the best hotels and places to visit near you in a single click.</p>
+                    <h3>Encuentra lo mejor cerca de ti</h3>
+                    <p>Encuentra los mejores hoteles y propiedades ya sea para visitar, alquilar o comprar cerca de ti y en un solo clic.</p>
                 </div>
             </section>
         </div>
