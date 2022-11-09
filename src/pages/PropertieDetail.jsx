@@ -84,13 +84,13 @@ const PropertieDetail = () => {
                                 <section className="principal">
                                     <div className='flex justify-between items-center text-sm py-3'>
 
-                                        <p><PlaceIcon />{datos.direccion}</p>
+                                        <p><PlaceIcon />{datos.direccion + ', ' + datos.barrio + ', ' + datos.ciudad}</p>
                                         <div>
                                             <p className="inline-flex select-none rounded-sm bg-[#1f93ff] px-2 py-1 text-sm font-semibold text-white">{datos.idTipo}</p>
                                             <p className="ml-4 inline-flex select-none rounded-sm bg-[#1f93ff] px-2 py-1 text-sm font-semibold text-white">{datos.idCatVenta}</p>
                                         </div>
                                     </div>
-                                    <h1 className='pt-4 pb-10 text-2xl'>Titulo para la pagina de la propiedad</h1>
+                                    <h1 className='pt-4 pb-10 text-2xl'>{datos.idTipo + ' en ' + datos.idCatVenta + ' en ' + datos.direccion + ', ' + datos.barrio}</h1>
                                     <div id='imagenes' className='grid grid-cols-4 grid-rows-2 gap-4 h-96'>
                                         <p className="bg-gray-600 rounded-xl col-span-2 row-span-2"></p>
                                         <p className="bg-gray-600 rounded-xl"></p>
