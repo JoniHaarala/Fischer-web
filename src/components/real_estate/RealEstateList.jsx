@@ -7,6 +7,7 @@ export default function RealEstateList({ data }) {
       {data.map((values) => (
         <RealEstateCard key={values.id}
           id={values.id}
+          imagen={values.imagen}
           name={values.direccion}
           habitaciones={values.ambientes}
           numPhotos={5}

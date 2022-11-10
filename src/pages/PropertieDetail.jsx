@@ -92,17 +92,17 @@ const PropertieDetail = () => {
                                     </div>
                                     <h1 className='pt-4 pb-10 text-2xl'>{datos.idTipo + ' en ' + datos.idCatVenta + ' en ' + datos.direccion + ', ' + datos.barrio}</h1>
                                     <div id='imagenes' className='grid grid-cols-4 grid-rows-2 gap-4 h-96'>
-                                        <p className="bg-gray-600 rounded-xl col-span-2 row-span-2"></p>
-                                        <p className="bg-gray-600 rounded-xl"></p>
-                                        <p className="bg-gray-600 rounded-xl"></p>
-                                        <p className="bg-gray-600 rounded-xl"></p>
-                                        <p className="bg-gray-600 rounded-xl"></p>
+                                        <img className="rounded-lg col-span-2 row-span-2 w-full h-full object-cover" src={datos.imagen} alt="imagen 0" />
+                                        <img className="rounded-lg w-full h-full object-cover" src={datos.imagen} alt="imagen 1" />
+                                        <img className="rounded-lg w-full h-full object-cover" src={datos.imagen} alt="imagen 2" />
+                                        <img className="rounded-lg w-full h-full object-cover" src={datos.imagen} alt="imagen 3" />
+                                        <img className="rounded-lg w-full h-full object-cover" src={datos.imagen} alt="imagen 4" />
                                     </div>
                                 </section>
 
                                 <div id='data y contact' className="rounded-xl my-3 grid grid-cols-1 md:grid-cols-3 gap-3">
                                     <main className="informacion col-span-2 h-fit rounded-md text-gray-700 my-3">
-                                        <div className='bg-white p-3 py-8 pl-14 flex flex-col gap-3 text-lg mb-10'>
+                                        <div className='bg-white border-2 rounded-md p-3 py-8 pl-14 flex flex-col gap-3 text-lg mb-10'>
                                             <p className=" w-fit inline-flex border-4 border-[#1f93ff] select-none rounded-md px-4 py-1 text-base font-semibold text-[#1f93ff]">{datos.idCatVenta}</p>
                                             {
                                                 (datos.idCatVenta === 'venta')
