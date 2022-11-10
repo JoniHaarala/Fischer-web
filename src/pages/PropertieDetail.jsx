@@ -92,11 +92,25 @@ const PropertieDetail = () => {
                                     </div>
                                     <h1 className='pt-4 pb-10 text-2xl'>{datos.idTipo + ' en ' + datos.idCatVenta + ' en ' + datos.direccion + ', ' + datos.barrio}</h1>
                                     <div id='imagenes' className='grid grid-cols-4 grid-rows-2 gap-4 h-96'>
-                                        <img className="rounded-lg col-span-2 row-span-2 w-full h-full object-cover" src={datos.imagen} alt="imagen 0" />
-                                        <img className="rounded-lg w-full h-full object-cover" src={datos.imagen} alt="imagen 1" />
-                                        <img className="rounded-lg w-full h-full object-cover" src={datos.imagen} alt="imagen 2" />
-                                        <img className="rounded-lg w-full h-full object-cover" src={datos.imagen} alt="imagen 3" />
-                                        <img className="rounded-lg w-full h-full object-cover" src={datos.imagen} alt="imagen 4" />
+                                        {
+                                            datos.imagen
+                                                ?
+                                                <>
+                                                    <img className="rounded-lg col-span-2 row-span-2 w-full h-full object-cover" src={datos.imagen} alt="imagen 0" />
+                                                    <img className="rounded-lg w-full h-full object-cover" src={datos.imagen} alt="imagen 1" />
+                                                    <img className="rounded-lg w-full h-full object-cover" src={datos.imagen} alt="imagen 2" />
+                                                    <img className="rounded-lg w-full h-full object-cover" src={datos.imagen} alt="imagen 3" />
+                                                    <img className="rounded-lg w-full h-full object-cover" src={datos.imagen} alt="imagen 4" />
+                                                </>
+                                                :
+                                                <>
+                                                    <img className="rounded-lg col-span-2 row-span-2 w-full h-full object-cover" src="https://cdn.thediplomatinspain.com/wp-content/uploads/2022/02/casa-madera.jpg" alt="imagen 0" />
+                                                    <img className="rounded-lg w-full h-full object-cover" src="https://cdn.thediplomatinspain.com/wp-content/uploads/2022/02/casa-madera.jpg" alt="imagen 1" />
+                                                    <img className="rounded-lg w-full h-full object-cover" src="https://cdn.thediplomatinspain.com/wp-content/uploads/2022/02/casa-madera.jpg" alt="imagen 2" />
+                                                    <img className="rounded-lg w-full h-full object-cover" src="https://cdn.thediplomatinspain.com/wp-content/uploads/2022/02/casa-madera.jpg" alt="imagen 3" />
+                                                    <img className="rounded-lg w-full h-full object-cover" src="https://cdn.thediplomatinspain.com/wp-content/uploads/2022/02/casa-madera.jpg" alt="imagen 4" />
+                                                </>
+                                        }
                                     </div>
                                 </section>
 
